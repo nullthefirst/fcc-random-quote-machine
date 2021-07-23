@@ -1,4 +1,5 @@
 import React from 'react';
+import Buttons from './Buttons';
 
 class Content extends React.Component {
   constructor(props) {
@@ -46,8 +47,11 @@ class Content extends React.Component {
     } else {
       return (
         <div>
-          <h1>{this.getRandomQuote(apiContent)['text']}</h1>
-          <p className="hue">{this.getRandomQuote(apiContent)['author']}</p>
+          <h1 id="text">{this.getRandomQuote(apiContent)['text']}</h1>
+          <p id="author" className="hue">
+            {this.getRandomQuote(apiContent)['author']}
+          </p>
+          <Buttons />
         </div>
       );
     }

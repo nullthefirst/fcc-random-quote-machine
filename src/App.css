@@ -25,3 +25,18 @@
   padding: 1rem;
   font-weight: bold;
 }
+
+.button {
+  color: #f0f0f0;
+  background-color: #639;
+  padding: 0.5rem;
+  border: 0.2rem solid #639;
+  border-radius: 6%;
+  cursor: pointer;
+}
+
+.button-group {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
