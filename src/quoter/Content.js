@@ -29,10 +29,12 @@ class Content extends React.Component {
   }
 
   getRandomQuote(content) {
+    // set maxIndex to last index number on incoming content
     const maxIndex = content.length - 1;
+    // derive a random index using the maxIndex as a key variable
     const randomIndex = Math.floor(Math.random() * maxIndex);
-    const { author, text } = content[randomIndex];
-    return [author, text];
+    // return random quote object
+    return content[randomIndex];
   }
 
   render() {
@@ -44,16 +46,9 @@ class Content extends React.Component {
     } else {
       return (
         <div>
-          <h1>{this.getRandomQuote(apiContent)[1]}</h1>
-          <p>{this.getRandomQuote(apiContent)[0]}</p>
+          <h1>{this.getRandomQuote(apiContent)['text']}</h1>
+          <p>{this.getRandomQuote(apiContent)['author']}</p>
         </div>
-        // <ul>
-        //   {apiContent.map((quote) => (
-        //     <li>
-        //       {quote.author} -- {quote.text}
-        //     </li>
-        //   ))}
-        // </ul>
       );
     }
   }
