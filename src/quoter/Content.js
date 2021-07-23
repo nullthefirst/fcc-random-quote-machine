@@ -47,7 +47,7 @@ class Content extends React.Component {
       return (
         <div>
           <h1>{this.getRandomQuote(apiContent)['text']}</h1>
-          <p>{this.getRandomQuote(apiContent)['author']}</p>
+          <p className="hue">{this.getRandomQuote(apiContent)['author']}</p>
         </div>
       );
     }

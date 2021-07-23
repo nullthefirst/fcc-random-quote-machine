@@ -6,8 +6,22 @@
 }
 
 #quote-box {
-  background-color: #232425;
+  background-color: #f0f0f0;
+  color: #232425;
+  padding: 0 1.5rem 1rem 1.5rem;
+  margin: 4rem 1rem;
+  width: 40rem;
+  height: auto;
+}
+
+.hue {
+  color: #639;
+}
+
+.title {
   color: #f0f0f0;
-  padding: 1rem 1.5rem;
-  margin: 1rem;
+  background-color: #639;
+  text-align: center;
+  padding: 1rem;
+  font-weight: bold;
 }
