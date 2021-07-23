@@ -1,10 +1,13 @@
+import ReactFCCtest from 'react-fcctest';
+
 import './App.css';
 
 import Quoter from './quoter/index';
 
 function App() {
   return (
-    <div className="">
+    <div className="app">
+      <ReactFCCtest />
       <Quoter />
     </div>
   );
