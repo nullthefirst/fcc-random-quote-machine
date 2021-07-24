@@ -33,6 +33,7 @@
   border: 0.2rem solid #639;
   border-radius: 6%;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .button-group {

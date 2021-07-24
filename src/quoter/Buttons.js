@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Buttons() {
+function Buttons(props) {
   return (
     <div className="button-group">
       <a

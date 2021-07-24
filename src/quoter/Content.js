@@ -10,7 +10,7 @@ class Content extends React.Component {
     };
   }
 
-  componentDidMount() {
+  fetchApiResults() {
     fetch('https://type.fit/api/quotes')
       .then((response) => response.json())
       .then(
@@ -27,6 +27,10 @@ class Content extends React.Component {
           });
         },
       );
+  }
+
+  componentDidMount() {
+    this.fetchApiResults();
   }
 
   getRandomQuote(content) {
