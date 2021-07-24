@@ -4,7 +4,7 @@ function Buttons(props) {
   return (
     <div className="button-group">
       <a
-        href="https://twitter.com/intent/tweet"
+        href={props.tweetQuote}
         target="_blank"
         rel="noreferrer"
         id="tweet-quote"

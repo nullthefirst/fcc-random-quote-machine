@@ -54,13 +54,18 @@ class Content extends React.Component {
     } else if (!hasLoaded) {
       return <div>Loading ...</div>;
     } else {
+      const tweetContent = `https://twitter.com/intent/tweet?text=🔊 ${
+        this.getRandomQuote(apiContent)['text']
+      }  👤 ${
+        this.getRandomQuote(apiContent)['author']
+      }  🔗 https://null-fcc-random-quote-machine.netlify.app/`;
       return (
         <div>
           <h1 id="text">{this.getRandomQuote(apiContent)['text']}</h1>
           <p id="author" className="hue">
             {this.getRandomQuote(apiContent)['author']}
           </p>
-          <Buttons newQuote={this.fetchNewQuote} />
+          <Buttons tweetQuote={tweetContent} newQuote={this.fetchNewQuote} />
         </div>
       );
     }
