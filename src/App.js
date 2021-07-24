@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="app">
       <ReactFCCtest />
-      <div id="content">
+      <div id="quote-block">
         <Quoter />
         <Footer />
       </div>
