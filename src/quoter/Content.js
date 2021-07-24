@@ -8,6 +8,7 @@ class Content extends React.Component {
       hasLoaded: false,
       apiContent: [],
     };
+    this.fetchNewQuote = this.fetchNewQuote.bind(this);
   }
 
   fetchApiResults() {
@@ -33,6 +34,10 @@ class Content extends React.Component {
     this.fetchApiResults();
   }
 
+  fetchNewQuote() {
+    this.fetchApiResults();
+  }
+
   getRandomQuote(content) {
     // set maxIndex to last index number on incoming content
     const maxIndex = content.length - 1;
@@ -55,7 +60,7 @@ class Content extends React.Component {
           <p id="author" className="hue">
             {this.getRandomQuote(apiContent)['author']}
           </p>
-          <Buttons />
+          <Buttons newQuote={this.fetchNewQuote} />
         </div>
       );
     }

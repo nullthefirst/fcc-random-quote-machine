@@ -11,7 +11,7 @@ function Buttons(props) {
         className="button">
         Tweet Quote
       </a>
-      <span id="new-quote" className="button">
+      <span id="new-quote" className="button" onClick={() => props.newQuote()}>
         New Quote
       </span>
     </div>
