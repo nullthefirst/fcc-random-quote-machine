@@ -1,4 +1,5 @@
 import React from 'react';
+import Buttons from './Buttons';
 
 class Content extends React.Component {
   constructor(props) {
@@ -7,9 +8,10 @@ class Content extends React.Component {
       hasLoaded: false,
       apiContent: [],
     };
+    this.fetchNewQuote = this.fetchNewQuote.bind(this);
   }
 
-  componentDidMount() {
+  fetchApiResults() {
     fetch('https://type.fit/api/quotes')
       .then((response) => response.json())
       .then(
@@ -28,6 +30,14 @@ class Content extends React.Component {
       );
   }
 
+  componentDidMount() {
+    this.fetchApiResults();
+  }
+
+  fetchNewQuote() {
+    this.fetchApiResults();
+  }
+
   getRandomQuote(content) {
     // set maxIndex to last index number on incoming content
     const maxIndex = content.length - 1;
@@ -44,10 +54,18 @@ class Content extends React.Component {
     } else if (!hasLoaded) {
       return <div>Loading ...</div>;
     } else {
+      const tweetContent = `https://twitter.com/intent/tweet?text=🔊 ${
+        this.getRandomQuote(apiContent)['text']
+      }  👤 ${
+        this.getRandomQuote(apiContent)['author']
+      }  🔗 https://null-fcc-random-quote-machine.netlify.app/`;
       return (
         <div>
-          <h1>{this.getRandomQuote(apiContent)['text']}</h1>
-          <p className="hue">{this.getRandomQuote(apiContent)['author']}</p>
+          <h1 id="text">{this.getRandomQuote(apiContent)['text']}</h1>
+          <p id="author" className="hue">
+            {this.getRandomQuote(apiContent)['author']}
+          </p>
+          <Buttons tweetQuote={tweetContent} newQuote={this.fetchNewQuote} />
         </div>
       );
     }

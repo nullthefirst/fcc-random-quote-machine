@@ -5,6 +5,12 @@
   font-size: 16px;
 }
 
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #quote-box {
   background-color: #f0f0f0;
   color: #232425;
@@ -24,4 +30,31 @@
   text-align: center;
   padding: 1rem;
   font-weight: bold;
+}
+
+.button {
+  color: #f0f0f0;
+  background-color: #639;
+  padding: 0.5rem;
+  border: 0.2rem solid #639;
+  border-radius: 6%;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button-group {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  color: #639;
+}
+
+#footer:visited,
+#footer:hover {
+  color: #f0f0f0;
 }
